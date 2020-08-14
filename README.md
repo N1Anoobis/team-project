@@ -16,7 +16,7 @@ React;
 
 ## Demo
 
-The project demo can be found at the following link: xxxxx
+The project demo can be found at the following link: https://n1anoobis.github.io/team-project/
 
 ## Project Initiation
 
