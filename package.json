@@ -2,6 +2,7 @@
   "name": "pizzeria-portal",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://n1anoobis.github.io/team-project/",
   "scripts": {
     "start": "run-p start:* ",
     "start:react": "react-scripts start",
@@ -17,7 +18,9 @@
     "test": "react-scripts test --noStackTrace",
     "test-all": "react-scripts test --watchAll=false --noStackTrace",
     "test-related": "react-scripts test --watchAll=false --noStackTrace --findRelatedTests",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "husky": {
     "hooks": {
