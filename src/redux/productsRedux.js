@@ -17,7 +17,7 @@ const UPDATE_FAVORITE_STATUS = createActionName('UPDATE_FAVORITE_STATUS');
 const RATE_PRODUCT = createActionName('RATE_PRODUCT');
 const TOGGLE_COMPARE = createActionName('TOGGLE_COMPARE');
 
-/* action creators */
+/* action  creators */
 
 export const updateFavoriteStatus = payload => ({
   payload,
