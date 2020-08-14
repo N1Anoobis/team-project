@@ -8,7 +8,7 @@ export const getNew = ({ products }) =>
 export const comparableProduct = ({ products }) =>
   products.filter(products => products.compare === true);
 
-/* action name creator */
+/* action name creator   */
 const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
 
