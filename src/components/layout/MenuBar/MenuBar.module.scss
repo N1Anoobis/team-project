@@ -1,0 +1,136 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
+  background-color: $main-light;
+
+  :global(.container)> :global(.row) {
+    height: 84px;
+  }
+
+
+  .hamburger {
+    display: none;
+  }
+
+  .closeMenu {
+    display: none !important;
+    width: 40px;
+    margin-top: 10px;
+    border: none;
+    margin-left: auto;
+  }
+
+  .menu {
+    display: flex;
+    align-self: stretch;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+      li {
+        list-style: none;
+        display: flex;
+        align-items: stretch;
+      }
+    }
+
+    a {
+      color: $colorDark;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      border-top: 4px solid $main-light;
+      font-weight: 500;
+      letter-spacing: 1px;
+
+      &:hover,
+      &.active {
+        background-color: $primary;
+        color: $main-light;
+        border-color: $primary;
+        @extend %hoverAnimation;
+      }
+
+      &.active {
+        border-color: $colorDark;
+      }
+    }
+  }
+}
+
+//tablet
+@media (max-width: 1200px) {
+  .root {
+    .menu {
+      position: static;
+
+      a {
+        padding: 16px 8px;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .root {
+    .menu {
+      margin: 0 auto;
+    }
+  }
+}
+
+//mobile
+@media (max-width: 575px) {
+  .root {
+    padding: 5px;
+
+    .hamburger {
+      display: block;
+      margin-left: 5px;
+    }
+
+    .closeMenu {
+      display: block !important;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background-color: $colorLight;
+      z-index: 10;
+      top: 0;
+      left: 0;
+
+      &.active {
+        display: block;
+        position: fixed;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 491px) {
+  .root {
+    margin-left: 5%;
+    margin-right: 5%;
+
+    .hamburger {
+      margin-left: 10%;
+    }
+  }
+}

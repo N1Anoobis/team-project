@@ -1,0 +1,190 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .panelBar {
+    margin-bottom: 30px;
+    position: relative;
+
+    :global(.row)>* {
+      border-bottom: 4px solid $form-border-color-soft;
+    }
+
+    .heading {
+      position: relative;
+
+      h3 {
+        color: $primary;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 45px;
+        border-bottom: 4px solid $primary;
+      }
+    }
+
+    .menu {
+      text-align: center;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          display: inline-block;
+          margin: 0 0.5rem;
+          font-weight: 600;
+
+          a {
+            color: $text-color;
+            position: relative;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+
+            &.active,
+            &:hover {
+              &::before {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 100%;
+                border-bottom: 4px solid $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .dots {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      ul {
+        margin: 0;
+        padding: 0 0 0 1rem;
+        list-style: none;
+        background-color: $main-light;
+        transform: translateY(15px);
+
+        li {
+          display: inline-block;
+          margin-left: 0.5rem;
+
+          a {
+            display: block;
+            width: 13px;
+            height: 13px;
+            border-radius: 6px;
+            background-color: $form-border-color-soft;
+            font-size: 0;
+
+            &.active,
+            &:hover {
+              background-color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .root {
+    .panelBar {
+      .heading {
+        h3 {
+          font-size: 18px;
+        }
+      }
+
+      .menu {
+        text-align: start;
+
+        ul {
+          margin-left: 20px;
+
+          li {
+            margin: 0 0.3rem;
+
+            a {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .root {
+    .panelBar {
+      margin-bottom: 110px;
+
+      :global(.row)>* {
+        border-bottom: none;
+      }
+
+      .heading {
+        position: static;
+        margin: 0 auto;
+        margin-bottom: 30px;
+
+        &::before {
+          content: "";
+          display: none;
+        }
+      }
+
+      .menu {
+        min-width: 100%;
+
+        ul {
+          position: static;
+          margin: 0 auto;
+          margin-top: -20px;
+          text-align: center;
+
+          li {
+            margin: 0 0.5rem;
+
+            a {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .dots {
+        top: 90px;
+        text-align: center;
+
+        ul {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.buttonLeft {
+  @extend %slideButtonLeft;
+}
+
+.buttonRight {
+  @extend %slideButtonRight;
+}

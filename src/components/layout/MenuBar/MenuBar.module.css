@@ -1,0 +1,113 @@
+.root .menu a:hover, .root .menu a.active {
+  transition: background-color 250ms linear, color 250ms linear, border-color 250ms linear;
+  transform: translate(0, 0);
+}
+
+.root {
+  box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
+  background-color: #ffffff;
+}
+.root :global(.container) > :global(.row) {
+  height: 84px;
+}
+.root .hamburger {
+  display: none;
+}
+.root .closeMenu {
+  display: none !important;
+  width: 40px;
+  margin-top: 10px;
+  border: none;
+  margin-left: auto;
+}
+.root .menu {
+  display: flex;
+  align-self: stretch;
+}
+.root .menu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.root .menu ul li {
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+}
+.root .menu a {
+  color: #2a2a2a;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  border-top: 4px solid #ffffff;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.root .menu a:hover, .root .menu a.active {
+  background-color: #d58e32;
+  color: #ffffff;
+  border-color: #d58e32;
+}
+.root .menu a.active {
+  border-color: #2a2a2a;
+}
+
+@media (max-width: 1200px) {
+  .root .menu {
+    position: static;
+  }
+  .root .menu a {
+    padding: 16px 8px;
+  }
+}
+@media (max-width: 991px) {
+  .root .menu {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 575px) {
+  .root {
+    padding: 5px;
+  }
+  .root .hamburger {
+    display: block;
+    margin-left: 5px;
+  }
+  .root .closeMenu {
+    display: block !important;
+  }
+  .root .menu {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 10;
+    top: 0;
+    left: 0;
+  }
+  .root .menu.active {
+    display: block;
+    position: fixed;
+  }
+  .root .menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 491px) {
+  .root {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .root .hamburger {
+    margin-left: 10%;
+  }
+}
+
+/*# sourceMappingURL=MenuBar.module.css.map */

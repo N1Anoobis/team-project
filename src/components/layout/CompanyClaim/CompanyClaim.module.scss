@@ -1,0 +1,140 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  background-color: $header-bg;
+
+  :global(.container)> :global(.row) {
+    height: 145px;
+  }
+
+  .phoneNumber {
+    p {
+      margin: 0;
+      font-size: 17px;
+      line-height: 42px;
+      color: $form-border-color-soft;
+      font-weight: 500;
+
+      .icon {
+        font-size: 32px;
+        color: $primary;
+        vertical-align: middle;
+        margin-top: -3px;
+        margin-right: 0.8rem;
+      }
+    }
+  }
+
+  .cart {
+    .cartBox {
+      display: inline-block;
+      position: relative;
+      color: $main-light;
+
+      .cartIcon {
+        background-color: $primary;
+        width: 55px;
+        height: 50px;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+
+        .icon {
+          margin-right: 5px;
+        }
+      }
+
+      .cartCounter {
+        width: 50px;
+        height: 27px;
+        border-radius: 14px;
+        background-color: $header-bg;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 14px;
+        color: $form-border-color-soft;
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translate(50%, -50%);
+        padding: 0 5px;
+      }
+
+      &:hover {
+        .cartIcon {
+          background-color: lighten($primary, 10%);
+          @extend %hoverAnimation;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .root {
+    img {
+      margin-bottom: 60px;
+    }
+
+    .phoneNumber {
+      position: absolute;
+      margin-top: 20px;
+      margin-right: 20px;
+      max-width: 550px;
+
+      p {
+        font-size: 14px;
+
+        .icon {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .cart {
+      margin-bottom: 60px;
+      margin-right: 30px;
+    }
+  }
+}
+
+@media (max-width: 357px) {
+  .root {
+    img {
+      width: 90px;
+    }
+
+    .phoneNumber {
+      p {
+        text-align: center;
+
+        .icon {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .cart {
+      .cartBox {
+        .cartIcon {
+          width: 35px;
+          height: 35px;
+          font-size: 18px;
+
+          .icon {
+            margin-right: 2px;
+          }
+        }
+
+        .cartCounter {
+          width: 30px;
+          height: 14px;
+          right: -8px;
+        }
+      }
+    }
+  }
+}
